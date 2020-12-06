@@ -63,11 +63,19 @@ class ViewController: UIViewController {
                     let jsonData:JSON = JSON(response.data as Any)
                 //APIを使って持ってきたデータのhits内にあるcount番目のwebformatURLを持ってくる
                         //クロージャを使っているのでsefl.countと記載しないと行けない
-                    let imageString = jsonData["hits"][self.count]["webformatURL"].string
+                    var imageUrl = jsonData["hits"][self.count]["webformatURL"].string
+                    
+                    //count番目の画像が存在せず、URLが取得できなかった場合
+                    if imageUrl == nil{
+                        //0番目に検索された画像を表示させる
+                        imageUrl = jsonData["hits"][0]["webformatURL"].string
+                        self.count = 0
+                        
+                    }
                 //持ってきた画像を表示
-                    self.odaiImage.sd_setImage(with: URL(string: imageString!), completed: nil)
+                    self.odaiImage.sd_setImage(with: URL(string: imageUrl!), completed: nil)
             //エラーだったときの処理
-                case .failure:
+            case .failure:
                     print("エラーです")
             }
         }

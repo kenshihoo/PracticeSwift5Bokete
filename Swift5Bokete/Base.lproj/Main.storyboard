@@ -96,6 +96,9 @@
                                 <state key="normal" title="シェアする">
                                     <color key="titleColor" systemColor="systemYellowColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="share:" destination="nwn-AA-4Lg" eventType="touchUpInside" id="nOF-Jb-WcS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cs-CP-qff">
                                 <rect key="frame" x="153" y="598" width="68" height="33"/>
@@ -105,6 +108,9 @@
                                 <state key="normal" title="戻る">
                                     <color key="titleColor" systemColor="systemGray6Color"/>
                                 </state>
+                                <connections>
+                                    <action selector="back:" destination="nwn-AA-4Lg" eventType="touchUpInside" id="c5F-2x-WpU"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="12L-n1-DRY">
                                 <rect key="frame" x="47" y="85" width="280" height="280"/>
@@ -126,6 +132,10 @@
                         <viewLayoutGuide key="safeArea" id="785-sx-v4p"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                     </view>
+                    <connections>
+                        <outlet property="commentLabel" destination="ydG-XU-NJc" id="mFz-MR-ddB"/>
+                        <outlet property="selectedImageView" destination="12L-n1-DRY" id="z3Q-7b-eSx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNs-lv-hKt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
